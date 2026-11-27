@@ -272,20 +272,13 @@ tr.score-est td{background:#E6F5EC;font-weight:700;color:#107e3e;border-top:2px 
     <a href="https://sap.sharepoint.com/:w:/r/teams/BTAEAAPAC/_layouts/15/Doc.aspx?sourcedoc=%7BB5952FDD-F45D-4AF7-B575-FD7B10299F77%7D&amp;file=EA%20Performance%20Goal%20FAQ.docx&amp;action=default&amp;mobileredirect=true" target="_blank" title="FAQ Document" style="display:inline-flex;align-items:center;gap:5px;padding:5px 10px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);border-radius:6px;color:#fff;font-size:11px;font-weight:600;text-decoration:none;font-family:'72 Brand',Arial,sans-serif;letter-spacing:.3px;cursor:pointer;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,0.28)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><circle cx="7" cy="7" r="6" stroke="white" stroke-width="1.4"></circle><path d="M5.5 5.2C5.5 4.37 6.17 3.7 7 3.7s1.5.67 1.5 1.5c0 .7-.45 1.2-1 1.5C7 6.95 7 7.4 7 7.7" stroke="white" stroke-width="1.3" stroke-linecap="round"></path><circle cx="7" cy="9.5" r=".7" fill="white"></circle></svg>FAQ</a>
     <button class="obtn" onclick="exportCurrentPDF(this)" id="btnExportPDF">⤓ Export PDF</button>
     <button class="obtn obtn-orange" onclick="showExportModal(this)" id="btnExportAll">⤓ Export All EAs to PDF</button>
-    <input type="file" id="_xlsxInput" accept=".xlsx" style="display:none" onchange="_onXlsxSelected(this)"><button onclick="_adminGate()" title="Upload new Excel data" style="display:inline-flex;align-items:center;gap:5px;padding:5px 10px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);border-radius:6px;color:#fff;font-size:11px;font-weight:600;cursor:pointer;font-family:'72 Brand',Arial,sans-serif"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M4 4l3-3 3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><rect x="1" y="10" width="12" height="3" rx="1" stroke="white" stroke-width="1.3"></rect></svg>Upload</button><button onclick="_ghSettingsOpen()" title="GitHub Settings" style="display:inline-flex;align-items:center;gap:5px;padding:5px 10px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);border-radius:6px;color:#fff;font-size:11px;font-weight:600;cursor:pointer;font-family:'72 Brand',Arial,sans-serif"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="2.5" stroke="white" stroke-width="1.3"></circle><path d="M7 1v2M7 11v2M1 7h2M11 7h2M2.93 2.93l1.41 1.41M9.66 9.66l1.41 1.41M2.93 11.07l1.41-1.41M9.66 4.34l1.41-1.41" stroke="white" stroke-width="1.2" stroke-linecap="round"></path></svg>GitHub</button><button onclick="_adminPanelOpen()" title="Admin Panel" style="display:inline-flex;align-items:center;gap:5px;padding:5px 10px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);border-radius:6px;color:#fff;font-size:11px;font-weight:600;cursor:pointer;font-family:'72 Brand',Arial,sans-serif"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5" r="2.5" stroke="white" stroke-width="1.3"></circle><path d="M2 12c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="white" stroke-width="1.3" stroke-linecap="round"></path></svg>Admin</button><span id="fb-live-dot" style="display:none;background:#00AA44;color:#fff;font-size:11px;padding:3px 10px;border-radius:10px;font-weight:700;letter-spacing:0.02em;white-space:nowrap">● Live</span>
+    <input type="file" id="_xlsxInput" accept=".xlsx" style="display:none" onchange="_onXlsxSelected(this)"><div style="position:relative" id="_admMenuWrap"><button id="_admMenuBtn" onclick="_admMenuToggle()" style="display: inline-flex; align-items: center; gap: 5px; padding: 5px 11px; background: rgba(255, 255, 255, 0.3); border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 6px; color: rgb(255, 255, 255); font-size: 11px; font-weight: 600; cursor: pointer; font-family: &quot;72 Brand&quot;, Arial, sans-serif;"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5" r="2.5" stroke="white" stroke-width="1.3"></circle><path d="M2 12c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="white" stroke-width="1.3" stroke-linecap="round"></path></svg>Admin</button><div id="_admDropdown" style="display: none; position: absolute; top: calc(100% + 6px); right: 0px; background: rgb(255, 255, 255); border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.18) 0px 4px 20px; min-width: 170px; z-index: 9999; overflow: hidden; border: 1px solid rgb(225, 226, 230);"><button onclick="_admDropAction('upload')" style="display: flex; align-items: center; gap: 8px; width: 100%; padding: 10px 14px; background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; cursor: pointer; font-size: 12px; font-weight: 600; color: rgb(29, 35, 41); font-family: &quot;72 Brand&quot;, Arial, sans-serif; text-align: left;" onmouseover="this.style.background='#F0F7FF'" onmouseout="this.style.background='none'"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M4 4l3-3 3 3" stroke="#0070F2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><rect x="1" y="10" width="12" height="3" rx="1" stroke="#0070F2" stroke-width="1.3"></rect></svg>Upload Data</button><div style="height:1px;background:#E1E2E6;margin:0 10px"></div><button onclick="_admDropAction('github')" style="display: flex; align-items: center; gap: 8px; width: 100%; padding: 10px 14px; background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; cursor: pointer; font-size: 12px; font-weight: 600; color: rgb(29, 35, 41); font-family: &quot;72 Brand&quot;, Arial, sans-serif; text-align: left;" onmouseover="this.style.background='#F0F7FF'" onmouseout="this.style.background='none'"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="2.5" stroke="#0070F2" stroke-width="1.3"></circle><path d="M7 1v2M7 11v2M1 7h2M11 7h2M2.93 2.93l1.41 1.41M9.66 9.66l1.41 1.41M2.93 11.07l1.41-1.41M9.66 4.34l1.41-1.41" stroke="#0070F2" stroke-width="1.2" stroke-linecap="round"></path></svg>GitHub Settings</button><div style="height:1px;background:#E1E2E6;margin:0 10px"></div><button onclick="_admDropAction('changelog')" style="display: flex; align-items: center; gap: 8px; width: 100%; padding: 10px 14px; background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; cursor: pointer; font-size: 12px; font-weight: 600; color: rgb(29, 35, 41); font-family: &quot;72 Brand&quot;, Arial, sans-serif; text-align: left;" onmouseover="this.style.background='#F0F7FF'" onmouseout="this.style.background='none'"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="1.5" stroke="#0070F2" stroke-width="1.3"></rect><line x1="3" y1="4.5" x2="11" y2="4.5" stroke="#0070F2" stroke-width="1.1"></line><line x1="3" y1="7" x2="11" y2="7" stroke="#0070F2" stroke-width="1.1"></line><line x1="3" y1="9.5" x2="8" y2="9.5" stroke="#0070F2" stroke-width="1.1"></line></svg>Update Change Log</button></div></div><span id="fb-live-dot" style="display:none;background:#00AA44;color:#fff;font-size:11px;padding:3px 10px;border-radius:10px;font-weight:700;letter-spacing:0.02em;white-space:nowrap">● Live</span>
     <button class="obtn" onclick="openSyncModal()" id="btnFBSync" title="Live Data Sync" style="background:#0070F2;color:#fff;border-color:#0070F2;display:inline-flex;align-items:center;gap:5px">☁ Live Sync</button>
     <div style="position:relative;display:inline-flex;align-items:center" id="_clDiv">
       <button onclick="void(0)" style="background:none;border:1.5px solid #C0C3C7;border-radius:5px;padding:4px 6px;cursor:pointer;display:flex;align-items:center;color:#444;line-height:1" onmouseenter="document.getElementById('_clTip').style.display='block'" onmouseleave="document.getElementById('_clTip').style.display='none'" title="Change Log">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
       </button>
-      <div id="_clTip" style="display:none;position:absolute;top:calc(100% + 6px);right:0;min-width:340px;background:#00144A;color:#fff;font-size:12px;font-weight:400;line-height:1.5;padding:10px 14px;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.25);z-index:9999;white-space:normal;pointer-events:none">
-        <div style="font-weight:700;margin-bottom:4px;color:#4CB1FF">Change Log</div>
-        <div style="margin-bottom:4px"><span style="color:#4CB1FF;font-weight:600">25 Nov 2026:</span> Data refreshed from _Performance Goal.1125f.xlsx (533 rows, 68 closed accounts); Topic 5 SP cards/table/score overhauled; filter bar updated (Max/Advanced Success Plan)<br>&nbsp;&nbsp;• Removed the duplicated Leads card, retaining it only under Topic 4.<br>&nbsp;&nbsp;• Premium-to-Base AI shift from Q4 onwards.</div>
-        <div style="padding:4px 8px"><span style="color:#4CB1FF;font-weight:600">23 Sep 2026:</span> Data refreshed from Performance Goal.0923 (latest, 503 rows, 57 closed accounts)</div>
-        <div style="padding:4px 8px"><span style="color:#4CB1FF;font-weight:600">04 Sep 2026:</span> Success Plan KPIs added to Topic 5<br>Has Success Plan, Max/Advanced SP and SP Service Planning filters added<br>Other APAC MU category added for regional EAs</div>
-        <div style="margin-bottom:4px"><span style="color:#4CB1FF;font-weight:600">30 Jul 2026:</span> Added a glossary of abbreviations and data source information to the FAQ. A new icon has also been added for submitting questions and suggestions.</div>
-        <div><span style="color:#4CB1FF;font-weight:600">24 Jul 2026:</span> No Confirmed Path – Excludes accounts with a confirmed Churn and other non-actionable accounts.</div>
-      </div>
+      <div id="_clTip" style="display: none; position: absolute; top: calc(100% + 6px); right: 0px; min-width: 340px; background: rgb(0, 20, 74); color: rgb(255, 255, 255); font-size: 12px; font-weight: 400; line-height: 1.5; padding: 10px 14px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 16px; z-index: 9999; white-space: normal; pointer-events: none;"><div style="font-weight:700;margin-bottom:4px;color:#4CB1FF">Change Log</div><div style=" padding:4px 8px"><span style="color:#4CB1FF;font-weight:600">25 Nov 2026:</span> * For Net New Success Plan Signed KPI -- incorporated both start date and transition date beyond 2026</div></div>
     </div>
   </div>
 </div>
@@ -3704,7 +3697,7 @@ function fbCopyLink(){
 </div>
 
 <!-- GitHub Settings Modal -->
-<div id="_ghModal" style="display:none;position:fixed;inset:0;background:rgba(0,20,74,.6);z-index:99998;align-items:center;justify-content:center">
+<div id="_ghModal" style="display: none; position: fixed; inset: 0px; background: rgba(0, 20, 74, 0.6); z-index: 99998; align-items: center; justify-content: center;">
   <div style="background:#fff;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.3);width:min(560px,95vw);font-family:'72 Brand',Arial,sans-serif;overflow:hidden;max-height:90vh;overflow-y:auto">
     <div style="background:#0070F2;color:#fff;padding:16px 20px;font-size:15px;font-weight:700;display:flex;justify-content:space-between;align-items:center">
       <span>⚙ GitHub Settings</span>
@@ -3752,7 +3745,7 @@ function fbCopyLink(){
 </div>
 
 <!-- Upload & Publish Modal -->
-<div id="_upModal" style="display: flex; position: fixed; inset: 0px; background: rgba(0, 20, 74, 0.6); z-index: 99998; align-items: center; justify-content: center;">
+<div id="_upModal" style="display: none; position: fixed; inset: 0px; background: rgba(0, 20, 74, 0.6); z-index: 99998; align-items: center; justify-content: center;">
   <div style="background:#fff;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.3);width:min(560px,95vw);font-family:'72 Brand',Arial,sans-serif;overflow:hidden">
     <div style="background:#0070F2;color:#fff;padding:16px 20px;font-size:15px;font-weight:700">↑ Upload &amp; Publish to GitHub</div>
     <div style="padding:20px;display:flex;flex-direction:column;gap:14px">
@@ -3798,6 +3791,57 @@ function _ghGet(k){return localStorage.getItem(_GH_LS[k])||'';}
 function _ghSet(k,v){localStorage.setItem(_GH_LS[k],v);}
 
 // ── Admin gate ───────────────────────────────────────────────────────────
+// Admin session — one password per page load
+let _admSessionActive=false;
+
+function _admMenuToggle(){
+  if(_admSessionActive){
+    const dd=document.getElementById('_admDropdown');
+    if(dd.style.display==='none')dd.style.display='block';
+    else dd.style.display='none';
+  } else {
+    _admCallback=function(){
+      _admSessionActive=true;
+      const btn=document.getElementById('_admMenuBtn');
+      if(btn){btn.style.background='rgba(255,255,255,0.3)';btn.style.borderColor='rgba(255,255,255,0.7)';}
+      document.getElementById('_admDropdown').style.display='block';
+    };
+    document.getElementById('_admModal').style.display='flex';
+    setTimeout(()=>document.getElementById('_admPwd').focus(),50);
+  }
+}
+
+function _admDropAction(action){
+  document.getElementById('_admDropdown').style.display='none';
+  if(action==='upload') document.getElementById('_xlsxInput').click();
+  else if(action==='github'){
+    document.getElementById('_ghOwner').value=_ghGet('owner');
+    document.getElementById('_ghRepo').value=_ghGet('repo');
+    document.getElementById('_ghBranch').value=_ghGet('branch')||'main';
+    document.getElementById('_ghPath').value=_ghGet('path')||'index.html';
+    document.getElementById('_ghToken').value=_ghGet('token');
+    document.getElementById('_ghNewPwd').value='';
+    document.getElementById('_ghNewPwd2').value='';
+    document.getElementById('_ghErr').style.display='none';
+    document.getElementById('_ghModal').style.display='flex';
+  }
+  else if(action==='changelog'){
+    const today=new Date();
+    const y=today.getFullYear(),m=String(today.getMonth()+1).padStart(2,'0'),d=String(today.getDate()).padStart(2,'0');
+    document.getElementById('_clNewDate').value=`${y}-${m}-${d}`;
+    _clRenderList();
+    document.getElementById('_adminPanel').style.display='flex';
+  }
+}
+
+document.addEventListener('click',function(e){
+  const wrap=document.getElementById('_admMenuWrap');
+  if(wrap&&!wrap.contains(e.target)){
+    const dd=document.getElementById('_admDropdown');
+    if(dd) dd.style.display='none';
+  }
+});
+
 let _admCallback=null;
 function _adminGate(cb){
   _admCallback=cb||function(){document.getElementById('_xlsxInput').click();};
@@ -4035,8 +4079,20 @@ async function _ghCommit(){
 
   try {
     // 1. Serialise current page HTML — async base64 via Blob/FileReader
+    // Hide all modals before capturing outerHTML — prevents visitors seeing open modals
+    const _commitModalIds=['_upModal','_ghModal','_admModal','_adminPanel','fb-modal-overlay'];
+    const _commitModalPrev={};
+    _commitModalIds.forEach(id=>{
+      const el=document.getElementById(id);
+      if(el){_commitModalPrev[id]=el.style.display;el.style.display='none';}
+    });
     // Capture DOM then inject current in-memory _D + _CLOSED so committed file has fresh data
     let htmlContent=document.documentElement.outerHTML;
+    // Restore modal states
+    _commitModalIds.forEach(id=>{
+      const el=document.getElementById(id);
+      if(el&&_commitModalPrev[id]!==undefined)el.style.display=_commitModalPrev[id];
+    });
     // Replace embedded _D with current in-memory value
     const _dStart=htmlContent.indexOf("let _D=");
     const _dEnd=htmlContent.indexOf(";\n",_dStart);
@@ -4162,14 +4218,14 @@ async function _ghCommit(){
       <!-- Existing Entries -->
       <div style="font-size:13px;font-weight:700;color:#00144A;margin-bottom:10px">Existing Entries</div>
       <div id="_clEntriesList" style="display:flex;flex-direction:column;gap:8px">
-    <div data-idx="0" style="border:1.5px solid #E1E2E6;border-radius:8px;padding:12px 14px;background:#FAFAFA">
+    <div style="border:1.5px solid #E1E2E6;border-radius:8px;padding:12px 14px;background:#FAFAFA;margin-bottom:4px">
       <div style="display:flex;align-items:flex-start;gap:10px">
         <div style="flex:1">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-            <input type="date" value="2026-11-25" data-field="date" data-idx="0" style="padding:5px 8px;border:1.5px solid #ccc;border-radius:5px;font-size:12px" onchange="_clUpdateField(0,'date',this.value)">
-            <span style="font-weight:700;color:#4CB1FF;font-size:12px">25 Nov 2026</span>
+            <input type="date" id="_clDate_0" value="2026-11-25" style="padding:5px 8px;border:1.5px solid #ccc;border-radius:5px;font-size:12px" oninput="document.getElementById('_clDateLbl_0').textContent=_clFmtDate(this.value)">
+            <span id="_clDateLbl_0" style="font-weight:700;color:#4CB1FF;font-size:12px">25 Nov 2026</span>
           </div>
-          <textarea rows="3" data-idx="0" data-field="text" style="width:100%;box-sizing:border-box;padding:7px 9px;border:1.5px solid #ccc;border-radius:5px;font-size:12px;resize:vertical;font-family:inherit" onchange="_clUpdateField(0,'text',this.value)">* For Net New Success Plan Signed KPI -- incorporated both start date and transition date beyond 2026</textarea>
+          <textarea id="_clText_0" rows="3" style="width:100%;box-sizing:border-box;padding:7px 9px;border:1.5px solid #ccc;border-radius:5px;font-size:12px;resize:vertical;font-family:inherit">* For Net New Success Plan Signed KPI -- incorporated both start date and transition date beyond 2026</textarea>
         </div>
         <button onclick="_clDeleteEntry(0)" title="Delete" style="padding:5px 8px;background:#FFF0F0;border:1.5px solid #FFCDD2;border-radius:5px;color:#BB0000;cursor:pointer;font-size:14px;flex-shrink:0">✕</button>
       </div>
@@ -4186,83 +4242,68 @@ async function _ghCommit(){
 
 <script>
 // ═══════════════════════════════════════════════════════════════════════
-// ADMIN PANEL — CHANGELOG EDITOR
+// ADMIN PANEL — CHANGELOG EDITOR (sort-on-save, batch edit — no index mismatch)
 // ═══════════════════════════════════════════════════════════════════════
 
-const _CL_LS_KEY = '_apac_changelog';
+const _CL_LS_KEY='_apac_changelog';
 
-// Parse existing entries from DOM _clTip on first load
 function _clParseDOM(){
-  const tip = document.getElementById('_clTip');
-  if(!tip) return [];
+  const tip=document.getElementById('_clTip');
+  if(!tip)return[];
   const entries=[];
+  const months={Jan:'01',Feb:'02',Mar:'03',Apr:'04',May:'05',Jun:'06',Jul:'07',Aug:'08',Sep:'09',Oct:'10',Nov:'11',Dec:'12'};
   tip.querySelectorAll('div').forEach(d=>{
-    const span=d.querySelector('span');
-    if(!span) return;
+    const span=d.querySelector('span');if(!span)return;
     const dateStr=span.textContent.replace(':','').trim();
-    // Convert "24 Nov 2026" → "2026-11-24" for date input
-    const months={Jan:'01',Feb:'02',Mar:'03',Apr:'04',May:'05',Jun:'06',
-                  Jul:'07',Aug:'08',Sep:'09',Oct:'10',Nov:'11',Dec:'12'};
     const parts=dateStr.split(' ');
-    let isoDate='';
-    if(parts.length===3&&months[parts[1]]){
-      isoDate=`${parts[2]}-${months[parts[1]]}-${parts[0].padStart(2,'0')}`;
-    }
-    // Get comment text (all after the span)
+    if(parts.length!==3||!months[parts[1]])return;
+    const isoDate=`${parts[2]}-${months[parts[1]]}-${parts[0].padStart(2,'0')}`;
     const clone=d.cloneNode(true);
     clone.querySelectorAll('span').forEach(s=>s.remove());
-    // Get remaining HTML as text, strip leading space/colon
-    let text=clone.innerHTML.replace(/^[\s:]+/,'').replace(/<br>/gi,'\n').replace(/&nbsp;&nbsp;&#8226;/g,'•').trim();
-    // Strip HTML tags
-    text=text.replace(/<[^>]+>/g,'').trim();
-    if(isoDate) entries.push({date:isoDate,text,display:dateStr});
+    let text=clone.innerHTML.replace(/^[\s:]+/,'').replace(/<br>/gi,'\n').replace(/&nbsp;&nbsp;&#8226;/g,'•').replace(/<[^>]+>/g,'').trim();
+    entries.push({date:isoDate,text});
   });
   return entries;
 }
 
-// Load from localStorage or DOM
 function _clLoad(){
   const stored=localStorage.getItem(_CL_LS_KEY);
-  if(stored){try{return JSON.parse(stored);}catch(e){}}
-  return _clParseDOM();
+  let arr=[];
+  if(stored){try{arr=JSON.parse(stored);}catch(e){arr=[];}}
+  if(!arr.length)arr=_clParseDOM();
+  arr.sort((a,b)=>b.date.localeCompare(a.date));
+  return arr;
 }
 
 function _clSaveToStorage(entries){
+  entries.sort((a,b)=>b.date.localeCompare(a.date));
   localStorage.setItem(_CL_LS_KEY,JSON.stringify(entries));
 }
 
-// Format date for display: "2026-11-24" → "24 Nov 2026"
 function _clFmtDate(iso){
-  if(!iso) return '';
+  if(!iso)return'';
   const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const [y,m,d]=iso.split('-');
-  return `${parseInt(d)} ${months[parseInt(m)-1]} ${y}`;
+  const parts=iso.split('-');if(parts.length<3)return iso;
+  return`${parseInt(parts[2])} ${months[parseInt(parts[1])-1]} ${parts[0]}`;
 }
 
-// Render the entries list in the admin panel
 function _clRenderList(){
   const entries=_clLoad();
-  // Sort descending by date
-  entries.sort((a,b)=>b.date.localeCompare(a.date));
   const list=document.getElementById('_clEntriesList');
-  if(!list) return;
-  if(!entries.length){
-    list.innerHTML='<div style="color:#888;font-size:13px;font-style:italic">No entries yet.</div>';
-    return;
-  }
+  if(!list)return;
+  if(!entries.length){list.innerHTML='<div style="color:#888;font-size:13px;font-style:italic">No entries yet.</div>';return;}
   list.innerHTML=entries.map((e,i)=>`
-    <div data-idx="${i}" style="border:1.5px solid #E1E2E6;border-radius:8px;padding:12px 14px;background:#FAFAFA">
+    <div style="border:1.5px solid #E1E2E6;border-radius:8px;padding:12px 14px;background:#FAFAFA;margin-bottom:4px">
       <div style="display:flex;align-items:flex-start;gap:10px">
         <div style="flex:1">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-            <input type="date" value="${e.date}" data-field="date" data-idx="${i}"
+            <input type="date" id="_clDate_${i}" value="${e.date}"
               style="padding:5px 8px;border:1.5px solid #ccc;border-radius:5px;font-size:12px"
-              onchange="_clUpdateField(${i},'date',this.value)">
-            <span style="font-weight:700;color:#4CB1FF;font-size:12px">${_clFmtDate(e.date)}</span>
+              oninput="document.getElementById('_clDateLbl_${i}').textContent=_clFmtDate(this.value)">
+            <span id="_clDateLbl_${i}" style="font-weight:700;color:#4CB1FF;font-size:12px">${_clFmtDate(e.date)}</span>
           </div>
-          <textarea rows="3" data-idx="${i}" data-field="text"
-            style="width:100%;box-sizing:border-box;padding:7px 9px;border:1.5px solid #ccc;border-radius:5px;font-size:12px;resize:vertical;font-family:inherit"
-            onchange="_clUpdateField(${i},'text',this.value)">${e.text}</textarea>
+          <textarea id="_clText_${i}" rows="3"
+            style="width:100%;box-sizing:border-box;padding:7px 9px;border:1.5px solid #ccc;border-radius:5px;font-size:12px;resize:vertical;font-family:inherit">${e.text}</textarea>
         </div>
         <button onclick="_clDeleteEntry(${i})" title="Delete"
           style="padding:5px 8px;background:#FFF0F0;border:1.5px solid #FFCDD2;border-radius:5px;color:#BB0000;cursor:pointer;font-size:14px;flex-shrink:0">✕</button>
@@ -4270,16 +4311,8 @@ function _clRenderList(){
     </div>`).join('');
 }
 
-function _clUpdateField(idx,field,val){
-  const entries=_clLoad();
-  if(entries[idx]) entries[idx][field]=val;
-  _clSaveToStorage(entries);
-  // Refresh date display label
-  _clRenderList();
-}
-
 function _clDeleteEntry(idx){
-  if(!confirm('Delete this entry?')) return;
+  if(!confirm('Delete this entry?'))return;
   const entries=_clLoad();
   entries.splice(idx,1);
   _clSaveToStorage(entries);
@@ -4299,34 +4332,34 @@ function _clAddEntry(){
   _clRenderList();
 }
 
-// Apply entries to the _clTip DOM
 function _clSave(){
-  const entries=_clLoad();
-  entries.sort((a,b)=>b.date.localeCompare(a.date));
+  const list=document.getElementById('_clEntriesList');
+  const cards=list?list.querySelectorAll('div[style*="border:1.5px"]'):[];
+  const entries=[];
+  cards.forEach((card,i)=>{
+    const dateEl=document.getElementById('_clDate_'+i);
+    const textEl=document.getElementById('_clText_'+i);
+    if(dateEl&&textEl&&dateEl.value)entries.push({date:dateEl.value,text:textEl.value.trim()});
+  });
+  _clSaveToStorage(entries);
   const tip=document.getElementById('_clTip');
-  if(!tip) return;
-
+  if(!tip){_adminPanelClose();return;}
+  const sorted=_clLoad();
   let html='<div style="font-weight:700;margin-bottom:4px;color:#4CB1FF">Change Log</div>';
-  entries.forEach((e,i)=>{
+  sorted.forEach((e,i)=>{
     const dateLabel=_clFmtDate(e.date);
-    // Convert bullet points back to HTML
-    const textHtml=e.text
-      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-      .replace(/\n•/g,'<br>&nbsp;&nbsp;&#8226;')
-      .replace(/\n/g,'<br>');
-    const style=i<entries.length-1?'margin-bottom:4px':'';
+    const textHtml=e.text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/\n•/g,'<br>&nbsp;&nbsp;&#8226;').replace(/\n/g,'<br>');
+    const style=i<sorted.length-1?'margin-bottom:4px':'';
     html+=`<div style="${style} padding:4px 8px"><span style="color:#4CB1FF;font-weight:600">${dateLabel}:</span> ${textHtml}</div>`;
   });
-
   tip.innerHTML=html;
   _adminPanelClose();
   alert('✓ Change log updated!');
 }
 
-// Open admin panel
 function _adminPanelOpen(){
   _adminGate(()=>{
-    // Pre-fill today's date
     const today=new Date();
     const y=today.getFullYear(),m=String(today.getMonth()+1).padStart(2,'0'),d=String(today.getDate()).padStart(2,'0');
     document.getElementById('_clNewDate').value=`${y}-${m}-${d}`;
@@ -4334,14 +4367,8 @@ function _adminPanelOpen(){
     document.getElementById('_adminPanel').style.display='flex';
   });
 }
-function _adminPanelClose(){
-  document.getElementById('_adminPanel').style.display='none';
-}
-
-// Close on backdrop click
-document.getElementById('_adminPanel').addEventListener('click',function(e){
-  if(e.target===this) this.style.display='none';
-});
+function _adminPanelClose(){document.getElementById('_adminPanel').style.display='none';}
+document.getElementById('_adminPanel').addEventListener('click',function(e){if(e.target===this)this.style.display='none';});
 </script>
 
 
