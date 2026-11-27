@@ -385,12 +385,12 @@ tr.score-est td{background:#E6F5EC;font-weight:700;color:#107e3e;border-top:2px 
       </div>
     </div>
   </div>
-  <button class="fcl" id="clrBtn" onclick="clearAllFilters()" style="display: none;">✖ Clear Filters</button>
+  <button class="fcl" id="clrBtn" onclick="clearAllFilters()" style="display:none">✖ Clear Filters</button>
 </div>
 
 <div class="main">
   <div class="bnr hi" id="bnr">
-    <span id="bnrTxt">Filters: EA: 1</span>
+    <span id="bnrTxt"></span>
     <button class="bnrx" onclick="hideBnr()">✖</button>
   </div>
 
@@ -4132,7 +4132,7 @@ async function _ghCommit(){
 
 
 <!-- ═══════════════ ADMIN PANEL MODAL ═══════════════ -->
-<div id="_adminPanel" style="display:none;position:fixed;inset:0;background:rgba(0,20,74,.6);z-index:99999;align-items:center;justify-content:center;padding:16px">
+<div id="_adminPanel" style="display: none; position: fixed; inset: 0px; background: rgba(0, 20, 74, 0.6); z-index: 99999; align-items: center; justify-content: center; padding: 16px;">
   <div style="background:#fff;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.3);width:min(640px,98vw);max-height:90vh;overflow-y:auto;font-family:'72 Brand',Arial,sans-serif">
     <!-- Header -->
     <div style="background:#00144A;color:#fff;padding:16px 20px;border-radius:12px 12px 0 0;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1">
@@ -4161,7 +4161,19 @@ async function _ghCommit(){
 
       <!-- Existing Entries -->
       <div style="font-size:13px;font-weight:700;color:#00144A;margin-bottom:10px">Existing Entries</div>
-      <div id="_clEntriesList" style="display:flex;flex-direction:column;gap:8px"></div>
+      <div id="_clEntriesList" style="display:flex;flex-direction:column;gap:8px">
+    <div data-idx="0" style="border:1.5px solid #E1E2E6;border-radius:8px;padding:12px 14px;background:#FAFAFA">
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+            <input type="date" value="2026-11-25" data-field="date" data-idx="0" style="padding:5px 8px;border:1.5px solid #ccc;border-radius:5px;font-size:12px" onchange="_clUpdateField(0,'date',this.value)">
+            <span style="font-weight:700;color:#4CB1FF;font-size:12px">25 Nov 2026</span>
+          </div>
+          <textarea rows="3" data-idx="0" data-field="text" style="width:100%;box-sizing:border-box;padding:7px 9px;border:1.5px solid #ccc;border-radius:5px;font-size:12px;resize:vertical;font-family:inherit" onchange="_clUpdateField(0,'text',this.value)">* For Net New Success Plan Signed KPI -- incorporated both start date and transition date beyond 2026</textarea>
+        </div>
+        <button onclick="_clDeleteEntry(0)" title="Delete" style="padding:5px 8px;background:#FFF0F0;border:1.5px solid #FFCDD2;border-radius:5px;color:#BB0000;cursor:pointer;font-size:14px;flex-shrink:0">✕</button>
+      </div>
+    </div></div>
     </div>
 
     <!-- Footer -->
